@@ -1,12 +1,8 @@
 // Función para mostrar el contenido principal después de la animación
 window.onload = function() {
-    init3DPlanet();
     setTimeout(function() {
-        document.getElementById('intro-animation').classList.add('fade-out');
-        setTimeout(function() {
-            document.getElementById('intro-animation').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-        }, 3000); // Tiempo de la animación de desaparición progresiva
+        document.getElementById('intro-animation').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
     }, 5000); // Cambia este valor para ajustar la duración de la animación
 };
 
@@ -47,28 +43,4 @@ function processPayment() {
 
     // Aquí puedes enviar los detalles del pago a tu servidor para procesar el pago con otros métodos.
     closePaymentModal();
-}
-
-function init3DPlanet() {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('planet-container').appendChild(renderer.domElement);
-
-    const geometry = new THREE.SphereGeometry(1, 32, 32);
-    const texture = new THREE.TextureLoader().load('https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg');
-    const material = new THREE.MeshBasicMaterial({ map: texture });
-    const planet = new THREE.Mesh(geometry, material);
-    scene.add(planet);
-
-    camera.position.z = 3;
-
-    function animate() {
-        requestAnimationFrame(animate);
-        planet.rotation.y += 0.001;
-        renderer.render(scene, camera);
-    }
-    animate();
 }
