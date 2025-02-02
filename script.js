@@ -1,3 +1,11 @@
+// Función para mostrar el contenido principal después de la animación
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById('intro-animation').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    }, 5000); // Cambia este valor para ajustar la duración de la animación
+};
+
 function openPaymentModal() {
     document.getElementById('payment-modal').style.display = 'block';
 }
