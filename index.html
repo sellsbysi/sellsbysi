@@ -5,23 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Productos</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Roboto:wght@100;400;900&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Roboto:wght@100;400;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-    <!-- Botón de Contacto -->
-    <button id="contact-button" class="contact-button" onclick="openContactModal()">Contactame</button>
+    <!-- Barra de Navegación -->
+    <nav>
+        <div class="logo">
+            <h1>SELLSBYSI</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <button id="contact-button" class="contact-button" onclick="openContactModal()">Contactame</button>
+    </nav>
 
     <!-- Animación de Introducción -->
     <div id="intro-animation">
-        <div id="planet"></div>
+        <div id="planet-container"></div>
         <h1 id="intro-title">SELLSBYSI</h1>
     </div>
 
     <!-- Contenido de la Página Web -->
     <div id="main-content" style="display: none;">
-        <header>
-            <h1>Tienda de Productos</h1>
-        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenido a SellsBySi</h1>
+                <p>Encuentra los mejores productos tecnológicos aquí.</p>
+            </div>
+        </section>
         <main>
             <section class="product-list">
                 <article class="product">
@@ -99,7 +113,7 @@
             <div class="modal-content">
                 <span class="close" onclick="closeContactModal()">&times;</span>
                 <h2>Contact Us</h2>
-                <p>If you need to contact us, here's our mail: <strong>sellsbysi@gmail.com</strong></p>
+                <p>If you want to contact us, here is our gmail: <strong>sellsbysi@gmail.com</strong></p>
                 <p>Please be patient.</p>
             </div>
         </div>
