@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Roboto:wght@100;400;900&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Botón de Contacto -->
+    <button id="contact-button" class="contact-button" onclick="openContactModal()">Contactame</button>
+
     <!-- Animación de Introducción -->
     <div id="intro-animation">
         <div id="planet"></div>
@@ -27,7 +30,7 @@
                     <p>Los nuevos AirPods Pro 2 con cancelación de ruido activa y mejor calidad de sonido.</p>
                     <p class="price">Precio: $249.00</p>
                     <p class="shipping">Envío: $40.00</p>
-                    <button onclick="openPaymentModal()">Comprar</button>
+                    <button onclick="openPaymentModal(249.00)">Comprar</button>
                 </article>
                 <article class="product">
                     <img src="airpods_4_anc.jpg" alt="AirPods 4 ANC">
@@ -35,7 +38,7 @@
                     <p>AirPods 4 con cancelación de ruido activa avanzada y mayor duración de batería.</p>
                     <p class="price">Precio: $199.00</p>
                     <p class="shipping">Envío: $40.00</p>
-                    <button onclick="openPaymentModal()">Comprar</button>
+                    <button onclick="openPaymentModal(199.00)">Comprar</button>
                 </article>
             </section>
         </main>
@@ -47,34 +50,57 @@
         <div id="payment-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closePaymentModal()">&times;</span>
-                <h2>Selecciona tu método de pago</h2>
+                <h2>Información de Pago</h2>
                 <form id="payment-form">
-                    <div class="payment-method">
-                        <label>
-                            <input type="radio" name="payment" value="credit-card" checked>
-                            Tarjeta de Crédito/Débito
-                        </label>
+                    <div class="form-group">
+                        <label for="fullname">Nombre Completo:</label>
+                        <input type="text" id="fullname" name="fullname" required>
                     </div>
-                    <div class="payment-method">
-                        <label>
-                            <input type="radio" name="payment" value="paypal">
-                            PayPal
-                        </label>
+                    <div class="form-group">
+                        <label for="address">Dirección:</label>
+                        <input type="text" id="address" name="address" required>
                     </div>
-                    <div class="payment-method">
-                        <label>
-                            <input type="radio" name="payment" value="apple-pay">
-                            Apple Pay
-                        </label>
+                    <div class="form-group">
+                        <label for="phone">Número de Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
-                    <div class="payment-method">
-                        <label>
-                            <input type="radio" name="payment" value="google-pay">
-                            Google Pay
-                        </label>
+                    <div class="form-group">
+                        <label for="nationality">Nacionalidad:</label>
+                        <input type="text" id="nationality" name="nationality" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-method">Método de Pago:</label>
+                        <select id="payment-method" name="payment-method" required>
+                            <option value="credit-card">Tarjeta de Crédito/Débito</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="apple-pay">Apple Pay</option>
+                            <option value="google-pay">Google Pay</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Número de Tarjeta:</label>
+                        <input type="text" id="card-number" name="card-number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiration-date">Fecha de Expiración:</label>
+                        <input type="month" id="expiration-date" name="expiration-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" required>
                     </div>
                     <button type="button" onclick="processPayment()">Pagar</button>
                 </form>
+            </div>
+        </div>
+
+        <!-- Modal de Contacto -->
+        <div id="contact-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeContactModal()">&times;</span>
+                <h2>Contact Us</h2>
+                <p>If you need to contact us, here's our mail: <strong>sellsbysi@gmail.com</strong></p>
+                <p>Please be patient.</p>
             </div>
         </div>
     </div>
