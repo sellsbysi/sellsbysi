@@ -5,68 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Productos</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Roboto:wght@100;400;900&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Tienda de Productos</h1>
-    </header>
-    <main>
-        <section class="product-list">
-            <article class="product">
-                <img src="airpods_pro_2.jpg" alt="AirPods Pro 2">
-                <h2>AirPods Pro 2</h2>
-                <p>Los nuevos AirPods Pro 2 con cancelación de ruido activa y mejor calidad de sonido.</p>
-                <p class="price">Precio: $249.00</p>
-                <p class="shipping">Envío: $40.00</p>
-                <button onclick="openPaymentModal()">Comprar</button>
-            </article>
-            <article class="product">
-                <img src="airpods_4_anc.jpg" alt="AirPods 4 ANC">
-                <h2>AirPods 4 ANC</h2>
-                <p>AirPods 4 con cancelación de ruido activa avanzada y mayor duración de batería.</p>
-                <p class="price">Precio: $199.00</p>
-                <p class="shipping">Envío: $40.00</p>
-                <button onclick="openPaymentModal()">Comprar</button>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Tienda de Productos. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Animación de Introducción -->
+    <div id="intro-animation">
+        <div id="planet"></div>
+        <h1 id="intro-title">SELLSBYSI</h1>
+    </div>
 
-    <!-- Modal de Pago -->
-    <div id="payment-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closePaymentModal()">&times;</span>
-            <h2>Selecciona tu método de pago</h2>
-            <form id="payment-form">
-                <div class="payment-method">
-                    <label>
-                        <input type="radio" name="payment" value="credit-card" checked>
-                        Tarjeta de Crédito/Débito
-                    </label>
-                </div>
-                <div class="payment-method">
-                    <label>
-                        <input type="radio" name="payment" value="paypal">
-                        PayPal
-                    </label>
-                </div>
-                <div class="payment-method">
-                    <label>
-                        <input type="radio" name="payment" value="apple-pay">
-                        Apple Pay
-                    </label>
-                </div>
-                <div class="payment-method">
-                    <label>
-                        <input type="radio" name="payment" value="google-pay">
-                        Google Pay
-                    </label>
-                </div>
-                <button type="button" onclick="processPayment()">Pagar</button>
-            </form>
+    <!-- Contenido de la Página Web -->
+    <div id="main-content" style="display: none;">
+        <header>
+            <h1>Tienda de Productos</h1>
+        </header>
+        <main>
+            <section class="product-list">
+                <article class="product">
+                    <img src="airpods_pro_2.jpg" alt="AirPods Pro 2">
+                    <h2>AirPods Pro 2</h2>
+                    <p>Los nuevos AirPods Pro 2 con cancelación de ruido activa y mejor calidad de sonido.</p>
+                    <p class="price">Precio: $249.00</p>
+                    <p class="shipping">Envío: $40.00</p>
+                    <button onclick="openPaymentModal()">Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="airpods_4_anc.jpg" alt="AirPods 4 ANC">
+                    <h2>AirPods 4 ANC</h2>
+                    <p>AirPods 4 con cancelación de ruido activa avanzada y mayor duración de batería.</p>
+                    <p class="price">Precio: $199.00</p>
+                    <p class="shipping">Envío: $40.00</p>
+                    <button onclick="openPaymentModal()">Comprar</button>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Tienda de Productos. Todos los derechos reservados.</p>
+        </footer>
+
+        <!-- Modal de Pago -->
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePaymentModal()">&times;</span>
+                <h2>Selecciona tu método de pago</h2>
+                <form id="payment-form">
+                    <div class="payment-method">
+                        <label>
+                            <input type="radio" name="payment" value="credit-card" checked>
+                            Tarjeta de Crédito/Débito
+                        </label>
+                    </div>
+                    <div class="payment-method">
+                        <label>
+                            <input type="radio" name="payment" value="paypal">
+                            PayPal
+                        </label>
+                    </div>
+                    <div class="payment-method">
+                        <label>
+                            <input type="radio" name="payment" value="apple-pay">
+                            Apple Pay
+                        </label>
+                    </div>
+                    <div class="payment-method">
+                        <label>
+                            <input type="radio" name="payment" value="google-pay">
+                            Google Pay
+                        </label>
+                    </div>
+                    <button type="button" onclick="processPayment()">Pagar</button>
+                </form>
+            </div>
         </div>
     </div>
 
